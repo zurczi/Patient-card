@@ -1,18 +1,22 @@
 package sample;
 
+import org.hl7.fhir.dstu3.model.Medication;
+
 public class myMedication {
-    private String text;
+    public String name;
+    public String code;
+    public String manufacturer;
+    public String description;
+    public myMedication(Medication m){
+        name=m.getCode().getText(); ///TODO
+        code=m.getCode().getCodingFirstRep().getCode();
+        manufacturer=m.getManufacturer().getDisplay();
+        description=m.getCode().getCoding().get(1).getDisplay();
 
-    public String getText() {
-        return text;
-    }
-
-    public myMedication(String text) {
-        this.text = text;
     }
 
     @Override
     public String toString() {
-        return text;
+        return "Name:"+ name + "\nCode:"+code+"\nManufacturer:"+manufacturer+"\nDescription:"+description;
     }
 }

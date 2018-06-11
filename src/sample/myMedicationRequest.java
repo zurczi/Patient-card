@@ -1,11 +1,13 @@
 package sample;
 
-import org.hl7.fhir.dstu3.model.MedicationStatement;
+import org.hl7.fhir.dstu3.model.MedicationRequest;
 import org.hl7.fhir.exceptions.FHIRException;
 
 import java.util.Date;
 
-public class myMedicationStatement {
+public class myMedicationRequest {
+
+
     private String name;
     private String taken;
     private String dosage;
@@ -13,13 +15,14 @@ public class myMedicationStatement {
     private Date endDate;
 
 
-    public myMedicationStatement(MedicationStatement ms)  {
+    public myMedicationRequest(MedicationRequest ms)  {
         try{
             this.name = ms.getMedicationCodeableConcept().getCodingFirstRep().getDisplay();
-            this.taken =  ms.getTaken().getDisplay();
-            this.dosage=  ms.getDosageFirstRep().getDoseSimpleQuantity().getValue().toString() + ms.getDosageFirstRep().getDoseSimpleQuantity().getUnit();
-            this.startDate = ms.getEffectivePeriod().getStart();
-            this.endDate =  ms.getEffectivePeriod().getEnd();
+
+            //this.taken =  ms.getTa.getDisplay();
+            //this.dosage=  ms.getDosageFirstRep().getDoseSimpleQuantity().getValue().toString() + ms.getDosageFirstRep().getDoseSimpleQuantity().getUnit();
+            //this.startDate = ms.getEffectivePeriod().getStart();
+            //this.endDate =  ms.getEffectivePeriod().getEnd();
 
         } catch (FHIRException e) {
             e.printStackTrace();
@@ -36,4 +39,6 @@ public class myMedicationStatement {
     public Date getStartDate() {
         return startDate;
     }
+    public String getName() { return name; }
+    public String getDosage() { return dosage; }
 }

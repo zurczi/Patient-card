@@ -5,17 +5,31 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.Pane?>
 
-<Pane prefHeight="675.0" prefWidth="1020.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<Pane prefHeight="716.0" prefWidth="1033.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <Button fx:id="search" layoutX="205.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleSearch" text="Szukaj" />
-      <ListView fx:id="patientList" layoutX="50.0" layoutY="70.0" prefHeight="440.0" prefWidth="334.0" />
-      <TextField fx:id="patientName" layoutX="50.0" layoutY="24.0" prefHeight="25.0" prefWidth="135.0" promptText="Podaj nazwisko" />
-      <Button fx:id="showDetails" layoutX="323.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleShowDetails" text="Wyswietl" />
-      <ListView fx:id="details" layoutX="440.0" layoutY="70.0" prefHeight="440.0" prefWidth="324.0" />
+      <Button fx:id="search" layoutX="205.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleSearch" text="Search" />
+      <ListView fx:id="patientList" layoutX="51.0" layoutY="173.0" onMouseClicked="#handleChoosePatient" prefHeight="440.0" prefWidth="215.0" />
+      <TextField fx:id="patientName" layoutX="50.0" layoutY="24.0" prefHeight="25.0" prefWidth="135.0" promptText="Text name" />
+      <Button fx:id="showDetails" layoutX="281.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleShowDetails" text="Display" />
+      <ListView fx:id="details" layoutX="290.0" layoutY="173.0" prefHeight="440.0" prefWidth="334.0" />
+      <TextArea fx:id="medicationShow" layoutX="669.0" layoutY="173.0" prefHeight="440.0" prefWidth="311.0" />
+      <Label fx:id="name" layoutX="127.0" layoutY="147.0" text="Name" />
+      <Label layoutX="437.0" layoutY="147.0" text="Details" />
+      <Label layoutX="787.0" layoutY="147.0" text="Medication" />
+      <DatePicker fx:id="timeStart" layoutX="266.0" layoutY="636.0" onAction="#changeTimeStart" />
+      <DatePicker fx:id="timeEnd" layoutX="473.0" layoutY="636.0" onAction="#changeTimeEnd" />
+      <Label layoutX="406.0" layoutY="28.0" text="ID:" />
+      <Label layoutX="406.0" layoutY="60.0" text="Name:" />
+      <Label layoutX="406.0" layoutY="92.0" text="Gender:" />
+      <Label fx:id="labelID" layoutX="497.0" layoutY="28.0" />
+      <Label fx:id="labelName" layoutX="496.0" layoutY="60.0" />
+      <Label fx:id="labelGender" layoutX="496.0" layoutY="92.0" />
+      <Label layoutX="406.0" layoutY="121.0" text="Date of birth:" />
+      <Label fx:id="labelDateOfBirth" layoutX="496.0" layoutY="121.0" />
+      <Label fx:id="labelPosition" layoutX="406.0" layoutY="6.0" text="Label" />
    </children>
 </Pane>
